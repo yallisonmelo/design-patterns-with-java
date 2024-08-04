@@ -26,9 +26,11 @@ public class PaymentCredit implements Payment {
         var bankAccountWithCredit = (BankAccount) bankAccount;
         value = value + (value * 0.1);
         bankAccountWithCredit.pay(value);
+        var ammountPaid = "Amount Paid : " + value;
+        var limitActual = "Limit actual: " + bankAccount.verifyLimitCredit(bankAccountWithCredit.getBalanceCredit());
         logger.info("Payment Credit done!");
-        logger.info("Amount Paid : " + value);
-        logger.info("Limit actual: " + bankAccount.verifyLimitCredit(bankAccountWithCredit.getBalanceCredit()));
+        logger.info(ammountPaid);
+        logger.info(limitActual);
 
     }
 }

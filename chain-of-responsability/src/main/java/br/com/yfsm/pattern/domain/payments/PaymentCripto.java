@@ -22,8 +22,9 @@ public class PaymentCripto implements Payment {
     @Override
     public void pay(Account bankAccount, double value) {
         bankAccount.pay(value);
+        var log = "Value: " + value;
         logger.info("Payment done!");
         logger.info("Payment done!");
-        logger.info("Value: " + value);
+        logger.info(log);
     }
 }
